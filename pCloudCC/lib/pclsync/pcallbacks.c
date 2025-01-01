@@ -254,8 +254,8 @@ static void status_change_thread(void *ptr){
   char downloadstr[MAX_STATUS_STR_LEN], uploadstr[MAX_STATUS_STR_LEN];
   pstatus_change_callback_t callback=(pstatus_change_callback_t)ptr;
   while (1){
-    // Maximum 2 updates/sec
-    psync_milisleep(500);
+    // Maximum update every 10 secs
+    psync_milisleep(10000);
     pthread_mutex_lock(&statusmutex);
     while (statuschanges<=0){
       statuschanges=-1;
