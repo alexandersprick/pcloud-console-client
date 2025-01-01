@@ -1,3 +1,12 @@
+Note on this fork: The original console client spams the log every 500ms when synchronizing; this
+has been reduced to 10s. In additiob, fuse mounts by other users was not possible.
+Use this patch with
+```
+cat /etc/fuse.conf
+# Allow non-root users to specify the allow_other or allow_root mount options.
+user_allow_other
+```
+
 # pCloud Console Client
 
 This is a simple linux console client for pCloud cloud storage. 
